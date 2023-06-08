@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayList_ProductElements {
+
+	private static List<Integer> product(List<Integer> list, int index) {
+		if(index < 0) {
+			List<Integer> l = new ArrayList<>();
+			return l;
+		}
+		List<Integer> l = product(list,index-1);
+		l.add((int)Math.pow(list.get(index),2));
+		return l;
+	}
+	public static void main(String[] args) {
+		List<Integer> list = new ArrayList<>();
+		list.add(5);
+		list.add(8);
+		list.add(2);
+		list.add(9);
+		list.add(3);
+		System.out.println("Product of elements of list : "+product(list, list.size()-1));
+	}
+
+}
